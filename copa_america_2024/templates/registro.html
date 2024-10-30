@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+</head>
+<body>
+    <h1>Registro</h1>
+    <form action="{{ url_for('registro') }}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave" required>
+
+        <button type="submit">Registrarse</button>
+    </form>
+    <a href="{{ url_for('login') }}">Ya tengo una cuenta. Iniciar sesión</a>
+</body>
+</html>
+

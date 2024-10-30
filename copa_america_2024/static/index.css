@@ -1,0 +1,185 @@
+body{
+    margin: 0;
+    font-family: "Josefin Sans";
+    background-color: #e8eaed;
+    color: #202124;
+    height: 100vh;
+}
+.title{
+    margin: 0;
+    text-align: center;
+    background-color: #07fd;
+    box-shadow: 0 0 30px #0005;
+    padding: 10px;
+}
+.box{
+    width: 100%;
+}
+.bracket--title{
+    font-size: 26px;
+    text-align: center;
+    overflow:hidden;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+@keyframes slidein{
+    from{
+        mardin-left: 100%;
+        width: 300%;
+    }
+    to{
+        margin-left:0%;
+        width: 100%;
+    }
+}
+
+.box-group{
+    margin:20px;
+    width: 900px;
+    margin: auto;
+    font-size: 20px;
+    padding: 10px
+}
+
+.conteiner{
+    position: relative;
+    border: 4px solid #000;
+    border-radius: 10px;
+    margin: auto;
+    width: 1366px;
+    height: 630px;
+    margin-bottom: 10px;
+    background-size: contain;
+    box-shadow: 0 0 35px #476ea8;
+    z-index: auto;
+}
+
+.title--game{ 
+    margin: 0; 
+    font-size: 19px;
+}
+
+.conteiner--game{
+    position: absolute;
+    width: 105px;
+    height: 260px;
+    transition: transform 0.3s;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
+.conteiner--game:hover{
+    transform: scale(1.2);
+}
+
+/* POSICION DE PARTIDOS */
+.game1{top:40px; left: 60px; z-index: 10}
+.game2{bottom: 40px; left: 60px; z-index: 10 }
+.game4{top:40px; right: 60px; z-index: 10}
+.game5{bottom: 40px; right: 60px; z-index: 10}
+.game3{top: 120px; left: 300px; height: 400px; z-index: 9}
+.game6{top: 120px; right: 300px; height: 400px; z-index: 9}
+.game7{ top:250px; left:533px; width: 300px}
+
+.circle{
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s; 
+    box-sizing: border-box;
+}
+
+.circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+    z-index: 1;
+}
+/* POSICION DE CIRCULOS */
+.circle1, .circle3, .circle7, .circle9{ top: 1; margin-bottom: 5px;  }
+.circle2, .circle4, .circle8, .circle10{ bottom: 0}
+.circle5, .circle11{top:12px; margin-bottom: 5px; margin-top: 5px}
+.circle6, .circle12{bottom: 12px;}
+.circle13{left: 0;}
+.circle14{ right: 0;}
+/* VENTANAS CONO INFO DEL PARTIDO */
+.conteiner--game .tooltip--text {
+    width: 400px;
+    font-size: 24px;
+    color: #000;
+    position: absolute;
+    visibility: hidden;
+    /* posisionamiento */
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+/* ESTILO PARA CARD CON INFO DEL PARTIDO */
+.tooltip--text__card {
+    width: 300px;
+    height: 200px;
+    background-color: #e8eaed;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #476ea8;
+
+}
+.card--time{
+    display: block;
+    margin:0;
+    padding-bottom: 0;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+/* ESTILO TITULO DE CARD + POSICION */
+    
+.card--title {margin: 0; padding-top: 0; color: #476ea8; }
+.card--block {
+     /* Esto alinea los hijos horizontalmente */
+    align-items: center; /* Alinea verticalmente el círculo y el texto */
+    justify-content: center; 
+    gap: 10px; /* Espacio entre el círculo y el texto */
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card--block .location{
+    margin: auto;
+    color: #476ea8;
+    margin-top: 10px;
+}
+
+p{font-size: 10px;}
+.pais {font-size: 14px; margin: 10px ;}
+.pais .versus {color: #476ea8; }
+.pais .number{ font-size: 18px;}
+
+/* POSICION DE VENTANAS DE CADA PARTIDO */
+.game1 .tooltip--text{top: 20px; left: 130px;}
+.game2 .tooltip--text{bottom: 35px; left: 130px;}
+.game3 .tooltip--text{top: 100px; left: 120px; }
+.game4 .tooltip--text{top: 20px; right: 25px;}
+.game5 .tooltip--text{bottom: 35px; right: 25px;}
+.game6 .tooltip--text{top: 100px; right: 25px;}
+/* FINAL  */
+.game7 .tooltip--text{bottom: 240px; left: 0px; margin:auto;}
+
+.game1:hover .tooltip--text, 
+.game2:hover .tooltip--text,
+.game3:hover .tooltip--text,
+.game4:hover .tooltip--text, 
+.game5:hover .tooltip--text,
+.game6:hover .tooltip--text,
+.game7:hover .tooltip--text{
+    z-index: 200;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
